@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="search">
+    <input type="text" placeholder="Search" [(ngModel)]="selectedCity" >
+    <span>🔍</span>
+  </div>
+  <div class="image">
+    <img src="https://media.tenor.com/puYTbns6rXAAAAAM/kids-spinning.gif" alt="">
+  </div>
+  <div class="buttons">
+    <div *ngFor="let cityName of uniqueCityNames" class="btn">
+      <button (click)="selectCity(cityName)">{{ cityName }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Display selected city data in a table -->
+<div *ngIf="selectedCityData" class="city-data">
+  <h2>{{ selectedCityData.name }}</h2>
+  <table>
+    <tr>
+      <th>Temperature</th>
+      <th>Date</th>
+    </tr>
+    <tr>
+      <td>{{ selectedCityData.main.temp }}°C</td>
+      <td>{{ selectedCityData.dt | date: 'medium' }}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-image: url("https://free4kwallpapers.com/no-watermarks/originals/2015/09/16/weather-live-wallpaper-icon.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire background */
+}
+  
