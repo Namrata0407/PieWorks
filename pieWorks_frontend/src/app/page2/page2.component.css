@@ -1,0 +1,110 @@
+
+.buttons {
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+justify-content: center;
+gap: 20px;
+margin-top: 50px;
+/* border: 3px solid red; */
+text-align: center;
+  }
+  
+  button {
+    background: linear-gradient(90deg, #007bff 0%, #36f9fc 100%);
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 5px;
+    width: 100%;
+    min-width: 100px;
+    max-width: 100px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.7s ease, transform 0.7s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover:nth-child(1) {
+    background: linear-gradient(90deg, #e435cf 0%, #ffa7a7 100%);
+    transform: scale(1.05);
+  }
+  
+  button:hover:nth-child(2) {
+    background: linear-gradient(90deg, #ffa7a7 0%, #ff6b6b 100%);
+    transform: scale(1.05);
+  }
+  
+  button:hover:nth-child(3) {
+    background: linear-gradient(90deg, #ffae00 0%, #15ccda 100%);
+    transform: scale(1.05);
+  }
+  
+
+.city-data h2{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(90deg, #dd0ca9 0%, #d60d0d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+  
+/* Add this CSS to your component's CSS file */
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  /* Style table headers */
+  th {
+    background-color: #1138e2;
+    text-align: left;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Style table cells */
+  td {
+    padding: 10px;
+    border-top: 1px solid #450101;
+    border-bottom: 1px solid #490202;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+
+td img{
+    /* border: 3px solid purple; */
+    height: 100px;
+    width: 100px;
+    
+  }
+@media screen and (max-width: 950px) and (min-width: 600px) {
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        }
+
+  }
+
+  @media screen and (max-width: 645px) and (min-width: 200px) {
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        }
+
+  }

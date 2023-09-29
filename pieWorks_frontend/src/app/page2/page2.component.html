@@ -1,1 +1,29 @@
-<p>page2 works!</p>
+<div class="container">
+    <div class="buttons">
+      <div *ngFor="let cityName of cityNames" class="btn">
+        <button class="city-button" (click)="filterDataByCity(cityName)">{{ cityName }}</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Display data for the selected city in a table -->
+  <div *ngIf="selectedCity" class="city-data">
+    <h2>Data for {{ selectedCity }}</h2>
+    <table>
+      <tr>
+        <th>Date and Time</th>
+        <th>Weather</th>
+        <th>Min Temperature</th>
+        <th>Max Temperature</th>
+      </tr>
+      <tr *ngFor="let item of filteredData">
+        <td>{{ item.dt | date: 'medium' }}</td>
+        <td>
+          <img [src]="getWeatherImage(item.weather[0].icon)" alt="Weather">
+        </td>
+        <td>{{ item.main.temp_min }}°C</td>
+        <td>{{ item.main.temp_max }}°C</td>
+      </tr>
+    </table>
+  </div>
+  

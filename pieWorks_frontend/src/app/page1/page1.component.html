@@ -1,6 +1,6 @@
 <div class="container">
   <div class="search">
-    <input type="text" placeholder="Search" [(ngModel)]="selectedCity" >
+    <input type="text" placeholder="Search" [(ngModel)]="selectedCity">
     <span>🔍</span>
   </div>
   <div class="image">
@@ -16,14 +16,25 @@
 <!-- Display selected city data in a table -->
 <div *ngIf="selectedCityData" class="city-data">
   <h2>{{ selectedCityData.name }}</h2>
+  <div class="temp_img"><img [src]="getTemperatureImage()" alt="Temperature">{{ selectedCityData.main.temp }}°C</div>
   <table>
     <tr>
-      <th>Temperature</th>
-      <th>Date</th>
+      <th>Date and Time</th>
+      <th>Weather</th>
+      <th>Min Temperature</th>
+      <th>Max Temperature</th>
     </tr>
     <tr>
-      <td>{{ selectedCityData.main.temp }}°C</td>
       <td>{{ selectedCityData.dt | date: 'medium' }}</td>
+
+      <td>
+        <img [src]="getWeatherImage(selectedCityData.weather[0].icon)" alt="Weather">
+      </td>
+      <td>{{ selectedCityData.main.temp_min }}°C</td>
+      <td>{{ selectedCityData.main.temp_max }}°C</td>
     </tr>
   </table>
 </div>
+
+
+
